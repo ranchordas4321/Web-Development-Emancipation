@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a form to the contact page that allows users to submit their name,
+        email, and message.
+    </title>
+    <link rel="stylesheet" href="internship2.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <div class="container">
+        <img src="https://therealtimereport.com/wp-content/uploads/2020/12/coding-1841550_1280.jpg">
+
+        <div class="text">
+            <form id="form" onsubmit="sendemail()">
+                <div>
+                    <h3>GETTING IN TOUCH</h3>
+                </div>
+
+                <input type="hidden" name="access_key" value="daa7470a-2b5a-458b-bdfc-264f0a02e734">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <input type="text" id="phone" placeholder="Phone Number" required>
+                <textarea id="message" rows="4" placeholder="How can we help you ?" required></textarea>
+                <button type="submit">Send</button>
+                </form>
+                </div>
+                <script src="https://smtpjs.com/v3/smtp.js">
+                </script>
+                <script>
+                function sendemail(){
+                Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "ranchordas4321@gmail.com",
+                Password: "F3C2759ADD1C4482BE2C1317A3704A3CC122",
+                To: 'ranchordas321@gmail.com',
+                From: "ranchordas4321@gmail.com",
+                // document.getElementbyid("idname").value
+                Subject: "This is the subject",
+                Body: "And this is the body"
+                //document.getElementbyid("idmessage").value
+                }).then(
+                message => alert(message)
+                );
+                }
+        </script>
+</body>
+
+</html>
